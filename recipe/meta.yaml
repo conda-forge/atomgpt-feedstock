@@ -1,5 +1,5 @@
 {% set name = "atomgpt" %}
-{% set version = "2024.6.8" %}
+{% set version = "2024.11.30" %}
 
 package:
   name: {{ name|lower }}
@@ -7,17 +7,17 @@ package:
 
 source:
   url: https://github.com/usnistgov/atomgpt/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: b4620ec1b090c10fb76acc0d91342b5edee9e8de242171e02d3a04173fc8f4c2
+  sha256: 1c143c6b8ddd061a30f42161b81664bfb6c93b2b53bd06e105b83aac1d781098
 
 build:
-  noarch: python 
+  noarch: python
   number: 0
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
 requirements:
   host:
     - python >=3.10
-    - setuptools 
+    - setuptools
     - wheel
     - pip
   run:
@@ -29,12 +29,12 @@ requirements:
     - mpmath >=1.3.0
     - trl
     - peft
-    - accelerate 
+    - accelerate
     - bitsandbytes
     - triton
     - sentencepiece
     - transformers
-    - xformers 
+    - xformers
     - spglib >=2.0.2
     - scikit-learn >=0.22.2
     - matplotlib-base >=3.4.1
